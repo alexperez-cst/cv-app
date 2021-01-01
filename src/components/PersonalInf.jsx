@@ -35,7 +35,7 @@ class PersonalInfo extends Component {
 					<Form.Label>Phone Number</Form.Label>
 					<Form.Control type='tel' pattern='\d{9}' id='phoneNumber' placeholder='Enter Phone Number' required={true}/>
 				</Form.Group>
-				<Button type='submit' variant='secondary'>Submit</Button>
+				<Button type='submit' variant='primary'>Submit</Button>
 			</Form>
 		);
 	}

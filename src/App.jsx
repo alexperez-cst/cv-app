@@ -1,8 +1,7 @@
-import './App.css';
 import React, {Component} from 'react';
 import CvForm from './components/CvForm.jsx';
 import CvVisualitation from './components/CvVisualitation.jsx';
-import {Button, Container} from 'react-bootstrap';
+import {Container} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 class App extends Component{
 	constructor(props){
@@ -17,21 +16,13 @@ class App extends Component{
 		}
 		this.changeView = this.changeView.bind(this);
 		this.visualize = this.visualize.bind(this);
-		this.addWork = this.addWork.bind(this);
 	}
 	async changeView(groupType,groupData){
-		console.log(groupType,groupData);
 		await this.setState(state => ({
 				[groupType+'Info']: state[groupType+'Info']?false:true,
 				[groupType+'Data']: groupData,
 		}));
-		console.log(this.state)
 		this.visualize(groupType);
-	}
-	addWork(){
-		if(this.state.workInfo){
-			return <Button variant='secondary' onClick={this.visualize.bind(this,'work')}>Add Work</Button>
-		}
 	}
 	visualize(group){
 		if(this.state[group+'Info']){
@@ -42,14 +33,17 @@ class App extends Component{
 	render(){
 		return (
 			<div>
-				<h1>CV</h1>
-				<Container>
+				<Container id='container'>
+					<h1>CV Creator</h1>
 					<h2>Personal Info</h2>
 					{this.visualize('personal')}
+					<hr/>
 					<h2>Educational Info</h2>
 					{this.visualize('educational')}
+					<hr/>
 					<h2>Work Info</h2>
 					{this.visualize('work')}
+					<br/>
 				</Container>
 			</div>
 		)

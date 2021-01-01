@@ -5,7 +5,7 @@ class WorkInfo extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			Company:'',
+			Companies:'',
 			Years:'',
 			Position:'',
 		}
@@ -14,7 +14,7 @@ class WorkInfo extends Component {
 	async submitInfo(event){
 		event.preventDefault();
 		await this.setState({
-			Company: document.querySelector('#company').value,
+			Companies: document.querySelector('#company').value,
 			Years: document.querySelector('#numYears').value,
 			Position: document.querySelector('#jobPosition').value,
 		})
@@ -24,18 +24,18 @@ class WorkInfo extends Component {
 		return (
 			<Form onSubmit={this.submitInfo}>
 						<Form.Group>
-							<Form.Label>Company Name:</Form.Label>
-							<Form.Control type="text" id='company' placeholder='Enter Company Name' required={true}/>
+							<Form.Label>Companies:</Form.Label>
+							<Form.Control type="text" id='company' placeholder='Enter a list of companies' required={true}/>
 						</Form.Group>
 						<Form.Group>
 							<Form.Label>Years Working:</Form.Label>
-							<Form.Control type='text' id='numYears' placeholder='Enter how long did you work at that company' required={true} />
+							<Form.Control type='text' id='numYears' placeholder='Enter how many years you worked' required={true} />
 						</Form.Group>
 						<Form.Group>
 							<Form.Label>Job Position:</Form.Label>
-							<Form.Control type='text' id='jobPosition' placeholder='Enter your job position' required={true}/>
+							<Form.Control type='text' id='jobPosition' placeholder='Enter your desired position' required={true}/>
 						</Form.Group>
-						<Button type='submit' variant='secondary'>Submit</Button>
+						<Button type='submit' variant='primary'>Submit</Button>
 			</Form>
 		);
 	}

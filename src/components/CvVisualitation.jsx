@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Container } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 class CvVisualitation extends Component {
 	constructor(props) {
 		super(props);
@@ -10,12 +10,15 @@ class CvVisualitation extends Component {
 	}
 	render(){
 		return(
-			<Container>
+			<div>
 				{Object.keys(this.props.groupData).map(key => {
-					return <h3>{key}: {this.props.groupData[key]}</h3>
+					return	<div>
+										<h3>{key}:</h3>
+										<p>{this.props.groupData[key]}</p>
+									</div>
 				})}
-				<Button variant='secondary' onClick={this.preChangeView}>Edit</Button>
-			</Container>
+				<Button variant='primary' onClick={this.preChangeView}>Edit</Button>
+			</div>
 		)
 	}
 }

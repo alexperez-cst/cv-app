@@ -35,7 +35,7 @@ class EducationalInfo extends Component {
 								<Form.Label>Year of Graduation</Form.Label>
 								<Form.Control type='date' id='graduationYear' placeholder='Enter Year' required={true}/>
 							</Form.Group>
-							<Button type='submit' variant='secondary'>Submit</Button>
+							<Button type='submit' variant='primary'>Submit</Button>
 			</Form>
 		);
 	}
